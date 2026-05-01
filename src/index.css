@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gray1: #8e8e8e;
+  --color-gray2: #171719;
+  --color-black: #0c0d0c;
+  --color-text1: #e8e8e8;
+  --color-text2: #d7d7d7;
+  --color-gray3: #5b5757;
+  --color-green1: #093b17;
+  --color-green2: #48ff54;
+  --color-green3: #064019;
+  --color-black1: #181818;
+}
+
+body {
+  background-color: #0c0d0c;
+}
+
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  background-color: #0C0D0C; /* Fondo base */
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  
+  /* Puntos más espaciados (aumentamos de 80px a 200px) */
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 2px);
+  
+  /* Al aumentar estos valores, hay menos puntos en pantalla */
+  background-size: 250px 250px, 400px 400px;
+  background-position: 0 0, 125px 125px;
+  
+  /* Aplicamos dos animaciones: movimiento y pulso */
+  animation: 
+    floatDots 60s linear infinite,
+    pulseDots 4s ease-in-out infinite;
+}
+
+/* Animación de movimiento lento */
+@keyframes floatDots {
+  from { background-position: 0 0, 125px 125px; }
+  to { background-position: 250px 500px, -400px 800px; }
+}
+
+/* Animación de pulso (opacidad) */
+@keyframes pulseDots {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
