@@ -2,27 +2,23 @@ import { motion } from 'framer-motion'
 
 export default function Inicio() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden h-screen">
+    <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden h-screen mt-10">
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }} // Un poco de transparencia para que no sea tan fuerte
+        animate={{ opacity: 0.4 }}
         transition={{ duration: 6 }}
         className="absolute -top-10 -z-10 w-150 h-150 rounded-full bg-[radial-gradient(circle,var(--color-green3)_0%,transparent_60%)] animate-pulse blur-3xl"
       />
 
-      {/* 2. El Contenedor con el "Saltito Suave" */}
       <motion.div
-        // Estado inicial: un poco abajo (y: 40) y ligeramente más pequeño
         initial={{ opacity: 0, y: 40, scale: 0.9 }}
-        // Estado final: posición original
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        // Configuración de Spring (física de resorte)
         transition={{
-          type: 'tween',
+          type: 'keyframes',
           stiffness: 200,
-          damping: 15,    // Bajé un poco el damping para que el rebote sea más notorio y "suave"
-          delay: 0.2      // Un pequeño retraso para que no sea tan brusco al cargar
+          damping: 35,
+          delay: 0.5
         }}
         className="relative z-10 flex flex-col items-center justify-center -top-15"
       >

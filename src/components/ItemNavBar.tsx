@@ -10,7 +10,7 @@ export default function ItemNavBar({ title, isSelected, setTitle }: Props) {
   return (
     <button 
       onClick={() => setTitle(title)}
-      className="relative px-5 py-1 text-[17px] font-semibold cursor-pointer transition-colors duration-300 z-10"
+      className="relative px-2 py-1 text-[15px] font-semibold cursor-pointer transition-colors duration-300 z-10"
     >
       <span className={`${isSelected ? 'text-text1' : 'text-gray1'} relative z-20 hover:animate-pulse`}>
         {title}

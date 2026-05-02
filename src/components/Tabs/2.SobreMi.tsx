@@ -3,7 +3,7 @@ import PuntoPulso from "../PuntoPulso";
 
 export default function SobreMi() {
   return (
-    <div className="w-full h-screen flex flex-col items-center pt-25">
+    <div className="w-full h-screen flex flex-col items-center pt-25 my-auto">
 
       <div className="flex items-baseline gap-2 mb-2">
         <h2 className="text-text1 text-5xl font-bold tracking-tight mt-10">
