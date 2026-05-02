@@ -7,7 +7,7 @@ type Props = {
   description: string
   tecnologias: string[]
   liveUrl: string
-  githubUrl: string  
+  githubUrl: string
 }
 
 export default function ProyectItem({ title, img, description, tecnologias, liveUrl, githubUrl }: Props) {
@@ -18,8 +18,6 @@ export default function ProyectItem({ title, img, description, tecnologias, live
       <div className="p-5">
         <p className="text-text1 font-bold mb-3">{title}</p>
         <p className="w-full text-gray1 font-semibold text-[14px] w-][50%]">{description}</p>
-
-        <button className="mt-3 text-green-300 font-bold p-1 px-5 text-[14px] bg-green3 rounded-2xl">Tecnologías</button>
         <div className="flex flex-wrap gap-2 mt-2">
           {tecnologias.map((item: string, index: number) => {
             return (
