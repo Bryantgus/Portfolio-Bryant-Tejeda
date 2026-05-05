@@ -31,14 +31,19 @@ export default function ProyectItem({ title, img, description, tecnologias, live
         <div className="w-full h-0.5 mt-3 mb-3 bg-gray3"></div>
 
         <div className='flex gap-5 font-semibold text-white'>
-          <a href={liveUrl} target='_blank' className='flex items-center gap-2 cursor-pointer' >
-            <img src={live} className='w-6 h-8' alt="Live" />
-            <p className='text-white'>Live</p>
-          </a>
-          <a href={githubUrl} target='_blank' className='flex items-center gap-1 cursor-pointer'>
-            <img src={github} className='w-6 h-5' alt="Github" />
-            <p>Github</p>
-          </a>
+          {liveUrl !== "" &&
+            <a href={liveUrl} target='_blank' className='flex items-center gap-2 cursor-pointer' >
+              <img src={live} className='w-6 h-8' alt="Live" />
+              <p className='text-white'>Live</p>
+            </a>
+          }
+
+          {githubUrl !== "" &&
+            <a href={githubUrl} target='_blank' className='flex items-center gap-1 cursor-pointer'>
+              <img src={github} className='w-6 h-5' alt="Github" />
+              <p>Github</p>
+            </a>
+          }
         </div>
       </div>
     </div>

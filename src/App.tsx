@@ -40,7 +40,7 @@ export default function App() {
         <section id="Sobre mi" className="w-full h-screen"><SobreMi /></section>
         <section id="Proyectos" className="w-full h-screen"><Proyectos /></section>
         <section id="Habilidades" className="w-full h-screen"><Habilidades /></section>
-        <section id="Experiencia" className="w-full h-screen"><Experiencia /></section>
+        {/* <section id="Experiencia" className="w-full h-screen"><Experiencia /></section> */}
         <section id="Contacto" className="w-full h-screen"><Contacto /></section>
       </main>
     </div>

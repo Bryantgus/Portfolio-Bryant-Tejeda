@@ -3,9 +3,11 @@ import ProyectItem from "../ProyectItem";
 import PuntoPulso from "../PuntoPulso";
 import proyects, { type ProyectsInfo } from '../../data/proyects.ts'
 import githubImg from '../../assets/Github Profile.png'
+import porfolio from '../../assets/Porfolio.png'
 
 const imgs: Record<string, string> = {
-  'Github Profile': githubImg
+  'Github Profile': githubImg,
+  'Porfolio': porfolio
 }
 
 export default function Proyectos() {
