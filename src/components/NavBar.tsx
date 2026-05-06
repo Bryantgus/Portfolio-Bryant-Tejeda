@@ -7,7 +7,7 @@ type Props = {
 }
 
 const navBarItems = [
-  'Inicio', 'Sobre mi', 'Proyectos', 'Habilidades', 'Experiencia', 'Contacto'
+  'Inicio', 'Sobre mi', 'Proyectos', 'Habilidades', 'Contacto'
 ]
 
 export default function NavBar({ title, setTitle }: Props) {
