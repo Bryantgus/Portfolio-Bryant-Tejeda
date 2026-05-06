@@ -4,10 +4,18 @@ import PuntoPulso from "../PuntoPulso";
 import proyects, { type ProyectsInfo } from '../../data/proyects.ts'
 import githubImg from '../../assets/Github Profile.png'
 import porfolio from '../../assets/Porfolio.png'
+import desgloseCroquis from '../../assets/DVC.png'
+import Task from "../../assets/Task.png"
+import Word from "../../assets/Word.png"
+import Quiz from "../../assets/Quiz.png"
 
 const imgs: Record<string, string> = {
   'Github Profile': githubImg,
-  'Porfolio': porfolio
+  'Porfolio': porfolio,
+  "DCV": desgloseCroquis,
+  "Task": Task,
+  "Word": Word,
+  "Quiz": Quiz,
 }
 
 export default function Proyectos() {
