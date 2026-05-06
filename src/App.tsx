@@ -3,7 +3,7 @@ import Inicio from "./components/Tabs/1.Inicio";
 import NavBar from "./components/NavBar";
 import SobreMi from "./components/Tabs/2.SobreMi";
 import Proyectos from "./components/Tabs/3.Proyectos";
-import Experiencia from "./components/Tabs/5.Experiencia";
+// import Experiencia from "./components/Tabs/5.Experiencia";
 import Contacto from "./components/Tabs/6.Contacto";
 import Habilidades from "./components/Tabs/4.Habilidades";
 
