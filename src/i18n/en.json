@@ -1,52 +1,110 @@
 {
   "meta": {
-    "title": "Bryant Tejeda | Full Stack Developer"
+    "title": "Bryant Tejeda | Full Stack Developer",
+    "description": "Portfolio of Bryant Tejeda, a Full Stack developer working with React, TypeScript, React Native and Node.js."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "mainNav": "Main navigation"
   },
   "nav": {
     "inicio": "Home",
     "sobreMi": "About me",
+    "experiencia": "Experience",
     "proyectos": "Projects",
     "habilidades": "Skills",
     "contacto": "Contact",
     "resume": "Resume",
+    "resumeUrl": "/cv/CV_Bryant_Tejeda_EN.pdf",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
   "home": {
-    "greeting": "Hi, I'm"
+    "greeting": "Hi, I'm",
+    "cta": {
+      "projects": "View projects",
+      "contact": "Contact me"
+    }
   },
   "about": {
     "title": "About Me",
     "subtitle": "Get to know me better",
+    "photoAlt": "Photo of Bryant Tejeda",
+    "goToPhoto": "Go to photo",
     "paragraphs": [
       "I'm a developer passionate about building modern, functional and well-designed web and mobile applications. I mainly work with **React**, **TypeScript**, **React Native** and **Node.js**, and I enjoy building solutions where user experience and system logic carry the same weight.",
       "I like going beyond just making a feature work: **I enjoy understanding the logic behind every problem**, optimizing processes and designing scalable, maintainable applications. I'm always learning new tools and best practices to keep growing as a **Full Stack** developer and build quality products."
     ]
   },
+  "experience": {
+    "title": "Experience",
+    "items": {
+      "solvex": {
+        "role": "Full Stack Software Developer",
+        "company": "Solvex Dominicana",
+        "period": "January 2025 – Present",
+        "bullets": [
+          "Full stack development of web applications from scratch: React and Angular frontends, REST APIs in ASP.NET Core (C#) and Node.js, and integrations with external services (government APIs, client Lambda functions, Azure OpenAI and SendGrid).",
+          "Contributed to public and financial sector projects (AFP Siembra, INCABIDE, INFOTEP) across the full lifecycle: architecture, development, testing and deployment.",
+          "Worked in a Scrum team with pull-request code reviews and continuous integration through build and deployment pipelines on Azure DevOps.",
+          "Maintained Azure App Services with deployment slots for DEV, QA and production, managing environment variables to continuously deliver new features to live environments."
+        ]
+      },
+      "freelance": {
+        "role": "Freelance Full Stack Software Developer",
+        "company": "Freelance",
+        "period": "February 2024 – Present",
+        "bullets": [
+          "Designed and built Desglosalo for P&P Consulteam's doors and windows workshop: custom software that digitizes and automates each window's breakdown, profile and glass cut optimization, job history and invoicing.",
+          "Gathered requirements with the workshop and designed the architecture, data model and business logic end to end.",
+          "Impact: calculation time per job dropped from 20–25 min to 5–7 min, with less material waste thanks to a cut optimization algorithm (bin packing).",
+          "Ongoing maintenance and development of the product, with a new version in progress."
+        ]
+      },
+      "pyp": {
+        "role": "IT Lead and Data Entry Clerk",
+        "company": "P&P Consulteam",
+        "period": "February 2024 – January 2025",
+        "bullets": [
+          "Handled data entry and Excel tracking for job calculations (aluminum profile and glass breakdowns per project), invoicing and material inventory.",
+          "Prepared quotes, invoices and job documentation, and recorded the business's purchases and sales.",
+          "Managed inventory of profiles, glass and hardware, updating it based on stock in, stock out and per-job usage.",
+          "Provided IT support to staff on digital tools and resolved day-to-day issues."
+        ]
+      },
+      "eted": {
+        "role": "Electrical Technician",
+        "company": "ETED (Dominican Electric Transmission Company)",
+        "period": "July 2023 – February 2024",
+        "bullets": [
+          "Worked with Protection, Control and Metering (PC&M) panels at national transmission grid substations: panels that communicate over data networks and verify connection status through software.",
+          "Software-based verification and diagnostics of communications and connections in protection and control equipment.",
+          "Fault analysis and equipment verification under regulated operating standards, within multidisciplinary technical teams."
+        ]
+      }
+    }
+  },
   "projects": {
     "title": "Projects",
     "prev": "Previous projects",
     "next": "Next projects",
+    "goToPage": "Go to page",
     "items": {
-      "porfolio": {
-        "title": "Portfolio",
-        "description": "Personal portfolio to showcase my profile as a developer"
+      "vision360": {
+        "title": "Visión 360 – AFP Siembra",
+        "description": "Retirement planning web platform with an in-house actuarial engine and personalized AI-generated recommendations (Azure OpenAI). Built at Solvex for AFP Siembra"
+      },
+      "incabide": {
+        "title": "INCABIDE – Auction Portal",
+        "description": "Platform for the National Institute for the Custody and Administration of Seized Assets that manages the full public auction lifecycle: inventory, participants, guarantees, live auction and contracts"
+      },
+      "desglosalo": {
+        "title": "Desglosalo",
+        "description": "Custom software that digitizes window breakdowns, profile and glass cut optimization, job history and invoicing. Cut the calculation time per job from 20–25 to 5–7 minutes"
       },
       "dcv": {
         "title": "Window Breakdown/Sketch",
         "description": "Full Stack project for window breakdowns and window cut optimization. This project is still in progress"
-      },
-      "task": {
-        "title": "TODO APP",
-        "description": "Task app. Perfect for building your to-do list"
-      },
-      "githubProfile": {
-        "title": "Github Profile",
-        "description": "Web app to search any Github profile, using the official Github API"
-      },
-      "wordless": {
-        "title": "Wordless Game",
-        "description": "Word guessing game with several attempts. Pro tip: press F12, open the console and you'll find a secret"
       },
       "countryQuiz": {
         "title": "Country Quiz Challenge",
@@ -59,14 +117,20 @@
     "languages": "Languages",
     "frameworks": "Frameworks and Libraries",
     "databases": "Databases",
-    "tools": "Tools and Platforms"
+    "tools": "Tools and Platforms",
+    "methodologies": "Methodologies"
   },
   "contact": {
     "title": "Get in touch",
     "emailAlt": "Email",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
     "location": "Santo Domingo, DR",
-    "locationAlt": "Location",
-    "sendEmail": "Send me an email"
+    "locationAlt": "Location"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
   },
   "language": {
     "switchTo": "Switch language to Spanish",

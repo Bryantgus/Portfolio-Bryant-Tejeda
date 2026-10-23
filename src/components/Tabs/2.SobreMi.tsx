@@ -10,13 +10,13 @@ export default function SobreMi() {
     <div className="w-full min-h-screen flex flex-col items-center pt-25 pb-16 px-5">
 
       <div className="flex items-baseline gap-2 mb-2">
-        <h2 className="text-text1 text-4xl sm:text-5xl font-bold tracking-tight mt-10">
+        <h2 className="text-text1 text-5xl sm:text-6xl font-bold tracking-tight mt-10">
           {t.about.title}
         </h2>
         <PuntoPulso />
       </div>
 
-      <div className=" text-gray3 text-lg mb-5">
+      <div className=" text-gray3 text-2xl sm:text-3xl mb-6">
         <p className="font-semibold text-gray1">
           {t.about.subtitle}
         </p>
@@ -27,7 +27,7 @@ export default function SobreMi() {
           <ImgSlider />
         </div>
 
-        <div className="text-gray1 text-base sm:text-[18px] font-semibold">
+        <div className="text-gray1 text-lg sm:text-xl font-semibold">
           <div className="space-y-6">
             {t.about.paragraphs.map((paragraph, i) => (
               <p key={i}><BoldText text={paragraph} /></p>

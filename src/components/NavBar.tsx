@@ -9,7 +9,7 @@ type Props = {
 }
 
 // Los ids coinciden con los id de cada <section> en App y con las llaves de t.nav
-const navBarItems = ['inicio', 'sobreMi', 'proyectos', 'habilidades', 'contacto'] as const
+const navBarItems = ['inicio', 'sobreMi', 'experiencia', 'proyectos', 'habilidades', 'contacto'] as const
 
 export default function NavBar({ title, setTitle }: Props) {
   const { t } = useLang()
@@ -20,17 +20,27 @@ export default function NavBar({ title, setTitle }: Props) {
     setOpen(false)
   }
 
-  const openResume = () => window.open('/cvbt.pdf', '_blank')
+  const resumeLink = (
+    <a
+      href={t.nav.resumeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => setOpen(false)}
+      className="glass-green text-white text-[17px] font-semibold rounded-xl px-5 py-2 cursor-pointer transition hover:border-green2 focus-visible:outline-2 focus-visible:outline-green2"
+    >
+      {t.nav.resume}
+    </a>
+  )
 
   return (
-    <div className="relative pointer-events-auto w-[92%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] z-100">
-      <div className="h-15 rounded-xl bg-gray2 border border-gray3 flex items-center px-5 justify-between lg:justify-center">
+    <div className="relative pointer-events-auto w-[94%] min-[1200px]:w-[calc(100%-240px)] min-[1200px]:max-w-6xl z-100">
+      <div className="h-16 min-[1200px]:h-20 rounded-2xl glass flex items-center justify-between px-5 min-[1200px]:px-8">
         <div className="flex items-baseline gap-2">
-          <p className="text-text1 text-[24px] font-bold hover:animate-pulse">Bryant</p>
+          <p className="text-text1 text-[26px] min-[1200px]:text-[30px] font-bold hover:animate-pulse">Bryant</p>
           <PuntoPulso />
         </div>
 
-        <div className="hidden lg:flex w-full items-center justify-evenly gap-2">
+        <div className="hidden min-[1200px]:flex items-center gap-1">
           {navBarItems.map((item) => (
             <ItemNavBar
               key={item}
@@ -39,21 +49,19 @@ export default function NavBar({ title, setTitle }: Props) {
               isSelected={title === item}
               setTitle={selectItem} />
           ))}
-          <button
-            onClick={openResume}
-            className="text-green2 rounded-xl px-4 border-green2 border py-1 animate-pulse cursor-pointer"
-          >
-            {t.nav.resume}
-          </button>
+        </div>
+
+        <div className="hidden min-[1200px]:block">
+          {resumeLink}
         </div>
 
         <button
           onClick={() => setOpen(!open)}
           aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={open}
-          className="lg:hidden p-2 -mr-2 text-text1 cursor-pointer"
+          className="min-[1200px]:hidden p-2 -mr-2 text-text1 cursor-pointer focus-visible:outline-2 focus-visible:outline-green2 rounded-lg"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" viewBox="0 0 24 24">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" viewBox="0 0 24 24">
             {open
               ? <path d="M6 6l12 12M18 6L6 18" />
               : <path d="M4 7h16M4 12h16M4 17h16" />}
@@ -62,7 +70,7 @@ export default function NavBar({ title, setTitle }: Props) {
       </div>
 
       {open && (
-        <div className="lg:hidden absolute top-full left-0 right-0 mt-2 rounded-xl bg-gray2 border border-gray3 p-4 flex flex-col items-center gap-3">
+        <div className="min-[1200px]:hidden absolute top-full left-0 right-0 mt-2 rounded-2xl glass p-5 flex flex-col items-center gap-3">
           {navBarItems.map((item) => (
             <ItemNavBar
               key={item}
@@ -72,12 +80,7 @@ export default function NavBar({ title, setTitle }: Props) {
               isSelected={title === item}
               setTitle={selectItem} />
           ))}
-          <button
-            onClick={openResume}
-            className="text-green2 rounded-xl px-4 border-green2 border py-1 animate-pulse cursor-pointer"
-          >
-            {t.nav.resume}
-          </button>
+          {resumeLink}
         </div>
       )}
     </div>

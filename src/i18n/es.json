@@ -1,56 +1,114 @@
 {
   "meta": {
-    "title": "Bryant Tejeda | Full Stack Developer"
+    "title": "Bryant Tejeda | Full Stack Developer",
+    "description": "Portafolio de Bryant Tejeda, desarrollador Full Stack con React, TypeScript, React Native y Node.js."
+  },
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "mainNav": "Navegación principal"
   },
   "nav": {
     "inicio": "Inicio",
     "sobreMi": "Sobre mi",
+    "experiencia": "Experiencia",
     "proyectos": "Proyectos",
     "habilidades": "Habilidades",
     "contacto": "Contacto",
     "resume": "Resume",
+    "resumeUrl": "/cv/CV_Bryant_Tejeda_ES.pdf",
     "openMenu": "Abrir menu",
     "closeMenu": "Cerrar menu"
   },
   "home": {
-    "greeting": "Hola, soy"
+    "greeting": "Hola, soy",
+    "cta": {
+      "projects": "Ver proyectos",
+      "contact": "Contáctame"
+    }
   },
   "about": {
     "title": "Sobre Mi",
     "subtitle": "Conóceme mejor",
+    "photoAlt": "Foto de Bryant Tejeda",
+    "goToPhoto": "Ir a la foto",
     "paragraphs": [
       "Soy un desarrollador apasionado por crear aplicaciones web y móviles modernas, funcionales y bien diseñadas. Trabajo principalmente con **React**, **TypeScript**, **React Native** y **Node.js**, y disfruto construir soluciones donde la experiencia del usuario y la lógica del sistema tengan el mismo nivel de importancia.",
       "Me gusta ir más allá de simplemente hacer que una funcionalidad trabaje: **disfruto entender la lógica detrás de cada problema**, optimizar procesos y diseñar aplicaciones escalables y mantenibles. Siempre estoy aprendiendo nuevas herramientas y mejores prácticas para seguir creciendo como desarrollador **Full Stack** y construir productos de calidad."
     ]
   },
+  "experience": {
+    "title": "Experiencia",
+    "items": {
+      "solvex": {
+        "role": "Full Stack Software Developer",
+        "company": "Solvex Dominicana",
+        "period": "Enero 2025 – Presente",
+        "bullets": [
+          "Desarrollo full stack de aplicaciones web desde cero: frontend en React y Angular, APIs REST en ASP.NET Core (C#) y Node.js, e integraciones con servicios externos (APIs del Estado, funciones Lambda de clientes, Azure OpenAI y SendGrid).",
+          "Participación en proyectos para el sector público y financiero (AFP Siembra, INCABIDE, INFOTEP) en todo el ciclo: arquitectura, desarrollo, pruebas y despliegue.",
+          "Trabajo en equipo Scrum con code review mediante pull requests e integración continua con pipelines de build y despliegue en Azure DevOps.",
+          "Mantenimiento de Azure App Services con deployment slots para DEV, QA y producción, incluyendo la gestión de variables de entorno para la entrega continua de nuevas funcionalidades."
+        ]
+      },
+      "freelance": {
+        "role": "Desarrollador de Software Full Stack Freelance",
+        "company": "Freelance",
+        "period": "Febrero 2024 – Presente",
+        "bullets": [
+          "Diseño y desarrollo de Desglosalo para el taller de puertas y ventanas de P&P Consulteam: software a medida que digitaliza y automatiza el desglose de cada ventana, la optimización de cortes de perfiles y cristales, el historial de trabajos y la facturación.",
+          "Levantamiento de requerimientos con el taller y diseño de la arquitectura, el modelo de datos y la lógica de negocio de principio a fin.",
+          "Impacto: el cálculo de cada trabajo pasó de 20–25 min a 5–7 min, con menor desperdicio de material gracias a un algoritmo de optimización de cortes (bin packing).",
+          "Mantenimiento y evolución continua del producto, con una nueva versión en desarrollo."
+        ]
+      },
+      "pyp": {
+        "role": "Encargado del Área de Informática y Digitador",
+        "company": "P&P Consulteam",
+        "period": "Febrero 2024 – Enero 2025",
+        "bullets": [
+          "Digitación y control en Excel de los cálculos de trabajo (desglose de perfiles de aluminio y vidrios por proyecto), la facturación y el inventario de materiales.",
+          "Elaboración de cotizaciones, facturas y documentación de cada trabajo, y registro de compras y ventas del negocio.",
+          "Control de inventario de perfiles, vidrios y accesorios, con actualización según entradas, salidas y consumo por trabajo.",
+          "Soporte informático al personal en el uso de las herramientas digitales y resolución de incidencias del día a día."
+        ]
+      },
+      "eted": {
+        "role": "Técnico Eléctrico",
+        "company": "ETED (Empresa de Transmisión Eléctrica Dominicana)",
+        "period": "Julio 2023 – Febrero 2024",
+        "bullets": [
+          "Trabajo con tableros de Protección, Control y Medición (PCyM) en subestaciones del sistema de transmisión nacional, paneles que se comunican informáticamente y verifican el estado de las conexiones mediante software.",
+          "Verificación y diagnóstico por software de comunicaciones y conexiones de los equipos de protección y control.",
+          "Análisis de fallas y verificación de equipos bajo estándares operativos regulados, en equipos técnicos multidisciplinarios."
+        ]
+      }
+    }
+  },
   "projects": {
     "title": "Proyectos",
     "prev": "Proyectos anteriores",
     "next": "Proyectos siguientes",
+    "goToPage": "Ir a la página",
     "items": {
-      "porfolio": {
-        "title": "Porfolio",
-        "description": "Porfolio personal para mostrar mi perfil como desarrollador"
+      "vision360": {
+        "title": "Visión 360 – AFP Siembra",
+        "description": "Plataforma web de planificación de retiro con motor actuarial propio y recomendaciones personalizadas generadas con IA (Azure OpenAI). Desarrollada en Solvex para AFP Siembra"
+      },
+      "incabide": {
+        "title": "INCABIDE – Portal de Subastas",
+        "description": "Plataforma para el Instituto Nacional de Custodia y Administración de Bienes Incautados que gestiona el ciclo completo de subastas públicas: inventario, participantes, garantías, subasta en vivo y contratos"
+      },
+      "desglosalo": {
+        "title": "Desglosalo",
+        "description": "Software a medida que digitaliza el desglose de ventanas, la optimización de cortes de perfiles y cristales, el historial de trabajos y la facturación. Redujo el cálculo de cada trabajo de 20–25 a 5–7 minutos"
       },
       "dcv": {
         "title": "Desglose/Croquis de Ventana",
-        "description": "Proyecto Full Stack para desglose de ventanas y optimizacion de cortes de ventana. Este proyecto aun esta en proceso"
-      },
-      "task": {
-        "title": "TODO APP",
-        "description": "App de Tareas. Perfecto para hacer tu lista de pendientes"
-      },
-      "githubProfile": {
-        "title": "Github Profile",
-        "description": "Web para buscar cualquier perfil de Github, usando la api oficial de Github"
-      },
-      "wordless": {
-        "title": "Wordless Game",
-        "description": "Juego de adivinar la palabra, con varios intentos. Ojo presiona f12 luego consola y veras un secreto"
+        "description": "Proyecto Full Stack para desglose de ventanas y optimización de cortes de ventana. Este proyecto aún está en proceso"
       },
       "countryQuiz": {
-        "title": "Country Quiz Challengue",
-        "description": "Que tanto sabes de paises en general, averigualo con este pequeño quest y demuestra que tanto sabes"
+        "title": "Country Quiz Challenge",
+        "description": "¿Qué tanto sabes de países en general? Averígualo con este pequeño quiz y demuestra cuánto sabes"
       }
     }
   },
@@ -59,14 +117,20 @@
     "languages": "Lenguajes",
     "frameworks": "Frameworks y Librerias",
     "databases": "Base de Datos",
-    "tools": "Herramientas y Plataformas"
+    "tools": "Herramientas y Plataformas",
+    "methodologies": "Metodologías"
   },
   "contact": {
     "title": "Póngase en contacto",
     "emailAlt": "Correo electrónico",
+    "copyEmail": "Copiar email",
+    "copied": "¡Copiado!",
     "location": "RD, Santo Domingo",
-    "locationAlt": "Ubicación",
-    "sendEmail": "Envíame un email"
+    "locationAlt": "Ubicación"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "backToTop": "Volver arriba"
   },
   "language": {
     "switchTo": "Cambiar idioma a inglés",

@@ -25,22 +25,37 @@ export default function Inicio() {
         }}
         className="relative z-10 flex flex-col items-center justify-center sm:-top-15"
       >
-        <p className="text-gray3 font-bold tracking-widest uppercase mb-2 text-center">
+        <p className="text-gray1 text-lg sm:text-xl font-bold tracking-widest uppercase mb-2 text-center">
           {t.home.greeting}
         </p>
 
-        <h1 className="text-text1 text-5xl sm:text-7xl md:text-8xl text-center font-black leading-tight">
+        <h1 className="bg-linear-to-b from-white to-green-200 bg-clip-text text-transparent text-5xl sm:text-7xl md:text-8xl text-center font-black leading-tight">
           Bryant Tejeda
         </h1>
 
-        <a href="https://roadmap.sh/full-stack" target="_blank"
-          className="mt-4 px-4 py-1 text-center border-[5px] animate-pulse font-black bg-white border-green3 rounded-full text-green3">
+        <a href="https://roadmap.sh/full-stack" target="_blank" rel="noopener noreferrer"
+          className="glass-green mt-5 px-6 py-2 text-lg sm:text-xl text-center font-black rounded-full text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-green2">
           Full Stack Developer
         </a>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href="#proyectos"
+            className="glass-green px-8 py-3 text-lg rounded-xl text-white font-semibold transition hover:-translate-y-0.5 hover:border-green2 focus-visible:outline-2 focus-visible:outline-green2"
+          >
+            {t.home.cta.projects}
+          </a>
+          <a
+            href="#contacto"
+            className="glass px-8 py-3 text-lg rounded-xl text-text1 font-semibold transition hover:-translate-y-0.5 hover:border-green2/60 focus-visible:outline-2 focus-visible:outline-green2"
+          >
+            {t.home.cta.contact}
+          </a>
+        </div>
       </motion.div>
 
       <div className="w-full h-[40vh] absolute
-      bg-[radial-gradient(ellipse_at_top,var(--color-green1)_0%,transparent_80%)] 
+      bg-[radial-gradient(ellipse_at_top,var(--color-green1)_0%,transparent_80%)]
       opacity-30 blur-3xl">
       </div>
 

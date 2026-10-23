@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gray1: #8e8e8e;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-gray1: #d1d5db;
   --color-gray2: #171719;
   --color-black: #0c0d0c;
-  --color-text1: #e8e8e8;
-  --color-text2: #d7d7d7;
+  --color-main-dark: #0c0d0c;
+  --color-text1: #ffffff;
+  --color-text2: #f1f5f9;
   --color-gray3: #5b5757;
   --color-green1: #093b17;
   --color-green2: #48ff54;
@@ -13,11 +15,46 @@
   --color-black1: #181818;
 }
 
-body {
-  background-color: #0c0d0c;
+html {
+  scroll-behavior: smooth;
 }
 
-@import "tailwindcss";
+/* Efecto glassmorphism: vidrio translucido con blur sobre el fondo */
+@utility glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Variante verde para acciones principales */
+@utility glass-green {
+  background: linear-gradient(135deg, rgba(72, 255, 84, 0.24), rgba(72, 255, 84, 0.08));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(72, 255, 84, 0.5);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 0 22px rgba(72, 255, 84, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Variante pequena para tags/chips de tecnologias */
+@utility glass-chip {
+  background: linear-gradient(135deg, rgba(72, 255, 84, 0.18), rgba(72, 255, 84, 0.06));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(72, 255, 84, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Titulos de seccion con un leve resplandor verde */
+h2 {
+  text-shadow: 0 0 32px rgba(72, 255, 84, 0.3);
+}
 
 body {
   margin: 0;
@@ -31,18 +68,18 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  
+
   /* Puntos más espaciados (aumentamos de 80px a 200px) */
-  background-image: 
+  background-image:
     radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1.5px),
     radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 2px);
-  
+
   /* Al aumentar estos valores, hay menos puntos en pantalla */
   background-size: 250px 250px, 400px 400px;
   background-position: 0 0, 125px 125px;
-  
+
   /* Aplicamos dos animaciones: movimiento y pulso */
-  animation: 
+  animation:
     floatDots 60s linear infinite,
     pulseDots 4s ease-in-out infinite;
 }
@@ -59,3 +96,15 @@ body::before {
   50% { opacity: 1; }
 }
 
+/* Respeta la preferencia del sistema de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
