@@ -6,9 +6,10 @@ import Proyectos from "./components/Tabs/3.Proyectos";
 // import Experiencia from "./components/Tabs/5.Experiencia";
 import Contacto from "./components/Tabs/6.Contacto";
 import Habilidades from "./components/Tabs/4.Habilidades";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 export default function App() {
-  const [navSelected, setNavSelect] = useState<string>('Inicio');
+  const [navSelected, setNavSelect] = useState<string>('inicio');
 
   const setTitle = (title: string) => {
     setNavSelect(title);
@@ -36,13 +37,15 @@ export default function App() {
       </nav>
 
       <main className="flex flex-col items-center">
-        <section id="Inicio" className="w-full min-h-screen"><Inicio /></section>
-        <section id="Sobre mi" className="w-full min-h-screen"><SobreMi /></section>
-        <section id="Proyectos" className="w-full min-h-screen"><Proyectos /></section>
-        <section id="Habilidades" className="w-full min-h-screen"><Habilidades /></section>
+        <section id="inicio" className="w-full min-h-screen"><Inicio /></section>
+        <section id="sobreMi" className="w-full min-h-screen"><SobreMi /></section>
+        <section id="proyectos" className="w-full min-h-screen"><Proyectos /></section>
+        <section id="habilidades" className="w-full min-h-screen"><Habilidades /></section>
         {/* <section id="Experiencia" className="w-full h-screen"><Experiencia /></section> */}
-        <section id="Contacto" className="w-full min-h-screen"><Contacto /></section>
+        <section id="contacto" className="w-full min-h-screen"><Contacto /></section>
       </main>
+
+      <LanguageSwitcher />
     </div>
   );
 }

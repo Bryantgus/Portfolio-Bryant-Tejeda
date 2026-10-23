@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Bryant Tejeda | Full Stack Developer"
+  },
+  "nav": {
+    "inicio": "Home",
+    "sobreMi": "About me",
+    "proyectos": "Projects",
+    "habilidades": "Skills",
+    "contacto": "Contact",
+    "resume": "Resume",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "greeting": "Hi, I'm"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "paragraphs": [
+      "I'm a developer passionate about building modern, functional and well-designed web and mobile applications. I mainly work with **React**, **TypeScript**, **React Native** and **Node.js**, and I enjoy building solutions where user experience and system logic carry the same weight.",
+      "I like going beyond just making a feature work: **I enjoy understanding the logic behind every problem**, optimizing processes and designing scalable, maintainable applications. I'm always learning new tools and best practices to keep growing as a **Full Stack** developer and build quality products."
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "prev": "Previous projects",
+    "next": "Next projects",
+    "items": {
+      "porfolio": {
+        "title": "Portfolio",
+        "description": "Personal portfolio to showcase my profile as a developer"
+      },
+      "dcv": {
+        "title": "Window Breakdown/Sketch",
+        "description": "Full Stack project for window breakdowns and window cut optimization. This project is still in progress"
+      },
+      "task": {
+        "title": "TODO APP",
+        "description": "Task app. Perfect for building your to-do list"
+      },
+      "githubProfile": {
+        "title": "Github Profile",
+        "description": "Web app to search any Github profile, using the official Github API"
+      },
+      "wordless": {
+        "title": "Wordless Game",
+        "description": "Word guessing game with several attempts. Pro tip: press F12, open the console and you'll find a secret"
+      },
+      "countryQuiz": {
+        "title": "Country Quiz Challenge",
+        "description": "How much do you know about countries in general? Find out with this little quiz and prove it"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Languages",
+    "frameworks": "Frameworks and Libraries",
+    "databases": "Databases",
+    "tools": "Tools and Platforms"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "emailAlt": "Email",
+    "location": "Santo Domingo, DR",
+    "locationAlt": "Location",
+    "sendEmail": "Send me an email"
+  },
+  "language": {
+    "switchTo": "Switch language to Spanish",
+    "label": "EN"
+  }
+}

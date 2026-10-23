@@ -1,4 +1,5 @@
 import PuntoPulso from "../PuntoPulso";
+import { useLang } from "../../i18n/useLang";
 import js from '../../assets/habilidades/js.png'
 import ts from '../../assets/habilidades/ts.png'
 import python from '../../assets/habilidades/python.png'
@@ -71,12 +72,14 @@ const toolsPlatforms = [
 ]
 
 export default function Habilidades() {
+  const { t } = useLang()
+
   return (
     <div className="w-full min-h-screen flex flex-col items-center pt-25 pb-16 px-5">
 
       <div className="flex items-baseline gap-2 mb-2">
         <h2 className="text-text1 text-4xl sm:text-5xl font-bold tracking-tight mt-10">
-          Habilidades
+          {t.skills.title}
         </h2>
         <PuntoPulso />
       </div>
@@ -84,7 +87,7 @@ export default function Habilidades() {
       <div className="flex flex-col gap-6 items-center w-full">
 
         <div className="w-full max-w-250">
-          <p className="text-text1 font-bold text-[20px] mb-3">Lenguajes</p>
+          <p className="text-text1 font-bold text-[20px] mb-3">{t.skills.languages}</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {lenguajes.map((item: Record<string, string>, index: number) => {
               return (
@@ -99,7 +102,7 @@ export default function Habilidades() {
         </div>
 
         <div className="w-full max-w-250">
-          <p className="text-text1 font-bold text-[20px] mb-3">Frameworks y Librerias</p>
+          <p className="text-text1 font-bold text-[20px] mb-3">{t.skills.frameworks}</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {frameworkLibrerias.map((item: Record<string, string>, index: number) => {
               return (
@@ -115,7 +118,7 @@ export default function Habilidades() {
         </div>
 
         <div className="w-full max-w-250">
-          <p className="text-text1 font-bold text-[20px] mb-3">Base de Datos</p>
+          <p className="text-text1 font-bold text-[20px] mb-3">{t.skills.databases}</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {databases.map((item: Record<string, string>, index: number) => {
               return (
@@ -131,7 +134,7 @@ export default function Habilidades() {
         </div>
 
         <div className="w-full max-w-250">
-          <p className="text-text1 font-bold text-[20px] mb-3 ">Herramientas y Plataformas</p>
+          <p className="text-text1 font-bold text-[20px] mb-3 ">{t.skills.tools}</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {toolsPlatforms.map((item: Record<string, string>, index: number) => {
               return (

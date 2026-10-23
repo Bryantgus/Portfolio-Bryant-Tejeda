@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ProyectItem from "../ProyectItem";
 import PuntoPulso from "../PuntoPulso";
+import { useLang } from "../../i18n/useLang";
 import proyects, { type ProyectsInfo } from '../../data/proyects.ts'
 import githubImg from '../../assets/Github Profile.png'
 import porfolio from '../../assets/Porfolio.png'
@@ -25,6 +26,7 @@ const getItemsPerView = () => {
 }
 
 export default function Proyectos() {
+  const { t } = useLang()
 
   const [rawIndex, setIndex] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(getItemsPerView)
@@ -56,7 +58,7 @@ export default function Proyectos() {
 
       <div className="flex items-baseline gap-2 mb-10">
         <h2 className="text-text1 text-4xl sm:text-5xl font-bold tracking-tight mt-9">
-          Proyectos
+          {t.projects.title}
         </h2>
         <PuntoPulso />
       </div>
@@ -72,9 +74,9 @@ export default function Proyectos() {
             {proyects.map((item: ProyectsInfo, i: number) => (
               <div key={i} className="shrink-0 p-3" style={{ width: `${100 / itemsPerView}%` }}>
                 <ProyectItem
-                  title={item.title}
+                  title={t.projects.items[item.id].title}
                   img={imgs[item.img]}
-                  description={item.description}
+                  description={t.projects.items[item.id].description}
                   tecnologias={item.tecnologias}
                   liveUrl={item.liveUrl}
                   githubUrl={item.githubUrl}
@@ -92,7 +94,7 @@ export default function Proyectos() {
             <img
               src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-left.svg"
               className="w-6 h-6 sm:w-8 sm:h-8 invert opacity-70 hover:opacity-100 transition"
-              alt="previus botton"
+              alt={t.projects.prev}
             />
           </button>
         }
@@ -105,7 +107,7 @@ export default function Proyectos() {
             <img
               src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-right.svg"
               className="w-6 h-6 sm:w-8 sm:h-8 invert opacity-70 hover:opacity-100 transition"
-              alt="next botton"
+              alt={t.projects.next}
             />
           </button>
         }

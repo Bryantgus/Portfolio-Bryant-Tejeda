@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLang } from '../../i18n/useLang'
 
 export default function Inicio() {
+  const { t } = useLang()
+
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden px-4 pt-20">
 
@@ -23,7 +26,7 @@ export default function Inicio() {
         className="relative z-10 flex flex-col items-center justify-center sm:-top-15"
       >
         <p className="text-gray3 font-bold tracking-widest uppercase mb-2 text-center">
-          Hola, soy
+          {t.home.greeting}
         </p>
 
         <h1 className="text-text1 text-5xl sm:text-7xl md:text-8xl text-center font-black leading-tight">
