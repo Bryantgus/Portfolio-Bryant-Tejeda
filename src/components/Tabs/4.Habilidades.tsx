@@ -72,18 +72,18 @@ const toolsPlatforms = [
 
 export default function Habilidades() {
   return (
-    <div className="w-full h-screen flex flex-col items-center pt-25">
+    <div className="w-full min-h-screen flex flex-col items-center pt-25 pb-16 px-5">
 
       <div className="flex items-baseline gap-2 mb-2">
-        <h2 className="text-text1 text-5xl font-bold tracking-tight mt-10">
+        <h2 className="text-text1 text-4xl sm:text-5xl font-bold tracking-tight mt-10">
           Habilidades
         </h2>
         <PuntoPulso />
       </div>
 
-      <div className="flex flex-col gap-6 items-center ">
+      <div className="flex flex-col gap-6 items-center w-full">
 
-        <div className="w-250">
+        <div className="w-full max-w-250">
           <p className="text-text1 font-bold text-[20px] mb-3">Lenguajes</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {lenguajes.map((item: Record<string, string>, index: number) => {
@@ -98,7 +98,7 @@ export default function Habilidades() {
           </div>
         </div>
 
-        <div className="w-250">
+        <div className="w-full max-w-250">
           <p className="text-text1 font-bold text-[20px] mb-3">Frameworks y Librerias</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {frameworkLibrerias.map((item: Record<string, string>, index: number) => {
@@ -114,7 +114,7 @@ export default function Habilidades() {
           </div>
         </div>
 
-        <div className="w-250">
+        <div className="w-full max-w-250">
           <p className="text-text1 font-bold text-[20px] mb-3">Base de Datos</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {databases.map((item: Record<string, string>, index: number) => {
@@ -130,7 +130,7 @@ export default function Habilidades() {
           </div>
         </div>
 
-        <div className="w-250">
+        <div className="w-full max-w-250">
           <p className="text-text1 font-bold text-[20px] mb-3 ">Herramientas y Plataformas</p>
           <div className="flex gap-3 flex-wrap w-full items-center justify-start">
             {toolsPlatforms.map((item: Record<string, string>, index: number) => {

@@ -3,10 +3,11 @@ import { motion } from "framer-motion"
 type Props = {
   title: string
   isSelected: boolean
+  layoutId?: string
   setTitle: (title: string) => void
 }
 
-export default function ItemNavBar({ title, isSelected, setTitle }: Props) {
+export default function ItemNavBar({ title, isSelected, setTitle, layoutId = "activeTab" }: Props) {
   return (
     <button 
       onClick={() => setTitle(title)}
@@ -19,7 +20,7 @@ export default function ItemNavBar({ title, isSelected, setTitle }: Props) {
 
       {isSelected && (
         <motion.div
-          layoutId="activeTab"
+          layoutId={layoutId}
           className="absolute inset-0 bg-green1 border border-green2 rounded-xl z-0"
           transition={{ type: "spring", bounce: 0.2, duration: 2 }}
         />

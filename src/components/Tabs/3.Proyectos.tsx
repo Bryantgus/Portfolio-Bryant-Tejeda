@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProyectItem from "../ProyectItem";
 import PuntoPulso from "../PuntoPulso";
 import proyects, { type ProyectsInfo } from '../../data/proyects.ts'
@@ -18,12 +18,26 @@ const imgs: Record<string, string> = {
   "Quiz": Quiz,
 }
 
+const getItemsPerView = () => {
+  if (window.innerWidth >= 1024) return 3
+  if (window.innerWidth >= 640) return 2
+  return 1
+}
+
 export default function Proyectos() {
 
-  const [index, setIndex] = useState(0)
-  const itemsPerView = 3
+  const [rawIndex, setIndex] = useState(0)
+  const [itemsPerView, setItemsPerView] = useState(getItemsPerView)
+
+  useEffect(() => {
+    const onResize = () => setItemsPerView(getItemsPerView())
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
 
   const maxIndex = Math.floor((proyects.length - 1) / itemsPerView) * itemsPerView
+  // Al cambiar itemsPerView el indice guardado puede quedar desalineado con las paginas
+  const index = Math.min(Math.floor(rawIndex / itemsPerView) * itemsPerView, maxIndex)
   const showNext = index < maxIndex
   const next = () => {
     if (index + itemsPerView < proyects.length) {
@@ -38,60 +52,64 @@ export default function Proyectos() {
   }
 
   return (
-    <div className="w-full h-screen flex flex-col items-center pt-20 pb-10 relative">
+    <div className="w-full min-h-screen flex flex-col items-center pt-20 pb-16 relative">
 
       <div className="flex items-baseline gap-2 mb-10">
-        <h2 className="text-text1 text-5xl font-bold tracking-tight mt-9">
+        <h2 className="text-text1 text-4xl sm:text-5xl font-bold tracking-tight mt-9">
           Proyectos
         </h2>
         <PuntoPulso />
       </div>
 
-      <div className="relative max-w-6xl w-full overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(index * 100) / itemsPerView}%)`
-          }}
-        >
-          {proyects.map((item: ProyectsInfo, i: number) => (
-            <div key={i} className="min-w-[33.333%] p-3">
-              <ProyectItem
-                title={item.title}
-                img={imgs[item.img]}
-                description={item.description}
-                tecnologias={item.tecnologias}
-                liveUrl={item.liveUrl}
-                githubUrl={item.githubUrl}
-              />
-            </div>
-          ))}
+      <div className="relative max-w-6xl w-full sm:px-14">
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${(index * 100) / itemsPerView}%)`
+            }}
+          >
+            {proyects.map((item: ProyectsInfo, i: number) => (
+              <div key={i} className="shrink-0 p-3" style={{ width: `${100 / itemsPerView}%` }}>
+                <ProyectItem
+                  title={item.title}
+                  img={imgs[item.img]}
+                  description={item.description}
+                  tecnologias={item.tecnologias}
+                  liveUrl={item.liveUrl}
+                  githubUrl={item.githubUrl}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
+        {index !== 0 &&
+          <button
+            onClick={prev}
+            className="cursor-pointer absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-50 p-1.5 sm:p-2 bg-black/60 sm:bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition"
+          >
+            <img
+              src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-left.svg"
+              className="w-6 h-6 sm:w-8 sm:h-8 invert opacity-70 hover:opacity-100 transition"
+              alt="previus botton"
+            />
+          </button>
+        }
+
+        {showNext &&
+          <button
+            onClick={next}
+            className="cursor-pointer absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-50 p-1.5 sm:p-2 bg-black/60 sm:bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition"
+          >
+            <img
+              src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-right.svg"
+              className="w-6 h-6 sm:w-8 sm:h-8 invert opacity-70 hover:opacity-100 transition"
+              alt="next botton"
+            />
+          </button>
+        }
       </div>
-
-      {index !== 0 &&
-        <button
-          onClick={prev}
-          className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 z-50 p-2 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition"
-        >
-          <img
-            src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-left.svg"
-            className="w-8 h-8 invert opacity-70 hover:opacity-100 transition"
-          />
-        </button>
-      }
-
-      {showNext &&
-        <button
-          onClick={next}
-          className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-50 p-2 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition"
-        >
-          <img
-            src="https://unpkg.com/heroicons@2.0.18/24/outline/chevron-right.svg"
-            className="w-8 h-8 invert opacity-70 hover:opacity-100 transition"
-          />
-        </button>
-      }
     </div>
 
   )

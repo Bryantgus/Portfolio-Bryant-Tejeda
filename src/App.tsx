@@ -31,17 +31,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-main-dark selection:bg-green1 selection:text-black">
-      <nav className="fixed top-0 left-0 w-full flex justify-center pt-13 z-50">
+      <nav className="fixed top-0 left-0 w-full flex justify-center pt-4 md:pt-8 lg:pt-13 z-50 pointer-events-none">
         <NavBar title={navSelected} setTitle={setTitle}/>
       </nav>
 
       <main className="flex flex-col items-center">
-        <section id="Inicio" className="w-full h-screen"><Inicio /></section>
-        <section id="Sobre mi" className="w-full h-screen"><SobreMi /></section>
-        <section id="Proyectos" className="w-full h-screen"><Proyectos /></section>
-        <section id="Habilidades" className="w-full h-screen"><Habilidades /></section>
+        <section id="Inicio" className="w-full min-h-screen"><Inicio /></section>
+        <section id="Sobre mi" className="w-full min-h-screen"><SobreMi /></section>
+        <section id="Proyectos" className="w-full min-h-screen"><Proyectos /></section>
+        <section id="Habilidades" className="w-full min-h-screen"><Habilidades /></section>
         {/* <section id="Experiencia" className="w-full h-screen"><Experiencia /></section> */}
-        <section id="Contacto" className="w-full h-screen"><Contacto /></section>
+        <section id="Contacto" className="w-full min-h-screen"><Contacto /></section>
       </main>
     </div>
   );

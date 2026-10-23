@@ -12,13 +12,13 @@ type Props = {
 
 export default function ProyectItem({ title, img, description, tecnologias, liveUrl, githubUrl }: Props) {
   return (
-    <div className="w-full h-125 border-2 border-gray3 hover:border-green1 rounded-xl transition-transform duration-300 hover:scale-103">
-      <img src={img} alt="Image Proyect" className="w-full h-[40%] rounded-t-xl" />
+    <div className="w-full h-full sm:min-h-125 flex flex-col border-2 border-gray3 hover:border-green1 rounded-xl transition-transform duration-300 hover:scale-103">
+      <img src={img} alt={title} className="w-full h-48 object-cover rounded-t-xl" />
 
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <p className="text-text1 font-bold mb-3">{title}</p>
-        <p className="w-full text-gray1 font-semibold text-[14px] w-][50%]">{description}</p>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <p className="text-gray1 font-semibold text-[14px]">{description}</p>
+        <div className="flex flex-wrap gap-2 mt-2 mb-3">
           {tecnologias.map((item: string, index: number) => {
             return (
               <div className="px-5 bg-green3 rounded-xl p-0.5 w-fit text-green-300 font-bold text-[14px] border border-green-300 text-center "
@@ -28,7 +28,7 @@ export default function ProyectItem({ title, img, description, tecnologias, live
             )
           })}
         </div>
-        <div className="w-full h-0.5 mt-3 mb-3 bg-gray3"></div>
+        <div className="w-full h-0.5 mt-auto mb-3 bg-gray3"></div>
 
         <div className='flex gap-5 font-semibold text-white'>
           {liveUrl !== "" &&

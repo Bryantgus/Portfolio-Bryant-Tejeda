@@ -20,7 +20,7 @@ export default function ImageSlider() {
   }, [index]);
 
   return (
-    <div className="relative w-full max-w-4xl h-105 overflow-hidden rounded-3xl bg-gray2 border border-gray3 shadow-2xl">
+    <div className="relative w-full max-w-4xl h-64 sm:h-80 lg:h-105 overflow-hidden rounded-3xl bg-gray2 border border-gray3 shadow-2xl">
       
       <AnimatePresence mode="wait">
         <motion.img
